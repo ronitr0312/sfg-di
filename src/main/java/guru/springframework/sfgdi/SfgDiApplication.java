@@ -1,6 +1,7 @@
 package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controllers.ContructorInjectionController;
+import guru.springframework.sfgdi.controllers.I18nController;
 import guru.springframework.sfgdi.controllers.MyController;
 import guru.springframework.sfgdi.controllers.PropertyInjectionController;
 import guru.springframework.sfgdi.controllers.SetterInjectionController;
@@ -21,6 +22,11 @@ public class SfgDiApplication {
 		String greeting = myController.sayHello();
 
 		System.out.println(greeting);
+
+		System.out.println("------Profile EN ------");
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("------property Injection ------");
 
